@@ -1,0 +1,253 @@
+/* src/styles/animations.css */
+
+/*
+  Note: While Tailwind CSS provides excellent transition and animation utilities,
+  this file can be used for more complex, reusable keyframe animations or
+  for specific transitions not easily covered by Tailwind's utility-first approach.
+  For most common transitions (opacity, transform, color), prefer Tailwind classes.
+*/
+
+/* === Keyframe Animations === */
+
+/* Fade In */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn var(--transition-duration-medium) var(--transition-timing-function) forwards;
+}
+
+/* Fade In Up */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(var(--space-4));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp var(--transition-duration-medium) var(--transition-timing-function) forwards;
+}
+
+/* Fade In Down */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(calc(-1 * var(--space-4)));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInDown {
+  animation: fadeInDown var(--transition-duration-medium) var(--transition-timing-function) forwards;
+}
+
+/* Scale In (Pop Effect) */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scaleIn {
+  animation: scaleIn var(--transition-duration-medium) var(--transition-timing-function) forwards;
+}
+
+
+/* Simple Spin for Loaders */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-simple {
+  animation: spin 1s linear infinite;
+}
+
+/* Pulse Animation for skeletons or loading indicators */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-bg { /* For background color pulsing, e.g., skeleton loaders */
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  /* Apply a base background color, Tailwind's bg-gray-300 for example */
+  /* background-color: var(--color-neutral-200); */
+}
+
+
+/* === Transition Utilities (Example - Prefer Tailwind for these) === */
+
+/*
+  While Tailwind's `transition`, `duration`, `ease` classes are preferred,
+  you might define a custom transition class if it's very specific and reused.
+*/
+
+.transition-smooth {
+  transition-property: all; /* Or specify properties: color, background-color, transform, opacity */
+  transition-duration: var(--transition-duration-medium);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.transition-fast {
+  transition-property: all;
+  transition-duration: var(--transition-duration-short);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+/* === Hover Effects (Examples) === */
+
+/* Subtle Lift/Scale on Hover */
+.hover-lift {
+  transition: transform var(--transition-duration-short) var(--transition-timing-function),
+              box-shadow var(--transition-duration-short) var(--transition-timing-function);
+}
+.hover-lift:hover,
+.hover-lift:focus-visible {
+  transform: translateY(calc(-1 * var(--space-1)));
+  box-shadow: var(--shadow-lg); /* Example shadow on lift */
+}
+
+/* Subtle Scale Up on Hover */
+.hover-scale-up {
+  transition: transform var(--transition-duration-short) var(--transition-timing-function);
+}
+.hover-scale-up:hover,
+.hover-scale-up:focus-visible {
+  transform: scale(1.05);
+}
+
+
+/* === Loading States === */
+
+/* Example: A simple shimmer effect for loading placeholders */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.loading-shimmer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 20%, /* Lighter shimmer */
+    rgba(255, 255, 255, 0.5) 60%, /* Peak of shimmer */
+    rgba(255, 255, 255, 0.2) 100% /* Lighter shimmer */
+  );
+  background-size: 1000px 100%; /* Wider gradient for smoother shimmer */
+  animation: shimmer 2.5s infinite linear;
+  opacity: 0.6;
+  border-radius: inherit; /* Ensure shimmer respects parent's border radius */
+}
+
+.loading-placeholder {
+  position: relative;
+  overflow: hidden; /* Important for shimmer effect */
+  background-color: var(--color-neutral-200); /* Base color for placeholder */
+  border-radius: var(--radius-md);
+}
+.loading-placeholder.is-text {
+  height: var(--font-size-base); /* Example height for text lines */
+  margin-bottom: var(--space-2);
+}
+.loading-placeholder.is-circle {
+  border-radius: var(--radius-full);
+}
+
+
+/* === Component-Specific Transition Groups (If using React Transition Group or similar) === */
+
+/* Example for a list item enter/exit */
+.list-item-enter {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+.list-item-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms var(--transition-timing-function), transform 300ms var(--transition-timing-function);
+}
+.list-item-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+.list-item-exit-active {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 300ms var(--transition-timing-function), transform 300ms var(--transition-timing-function);
+}
+
+/* Example for Modal Transitions */
+.modal-enter {
+  opacity: 0;
+  transform: scale(0.90) translateY(10px);
+}
+.modal-enter-active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: opacity var(--transition-duration-medium) var(--transition-timing-function), transform var(--transition-duration-medium) var(--transition-timing-function);
+}
+.modal-exit {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+.modal-exit-active {
+  opacity: 0;
+  transform: scale(0.95) translateY(5px);
+  transition: opacity var(--transition-duration-short) ease-in, transform var(--transition-duration-short) ease-in;
+}
+
+/* Backdrop for Modals */
+.backdrop-enter {
+  opacity: 0;
+}
+.backdrop-enter-active {
+  opacity: 1;
+  transition: opacity var(--transition-duration-medium) var(--transition-timing-function);
+}
+.backdrop-exit {
+  opacity: 1;
+}
+.backdrop-exit-active {
+  opacity: 0;
+  transition: opacity var(--transition-duration-short) ease-in;
+}
+
+/*
+  Remember to import this CSS file into your project, e.g., in `src/index.js` or `src/App.js`.
+  import './styles/animations.css';
+*/

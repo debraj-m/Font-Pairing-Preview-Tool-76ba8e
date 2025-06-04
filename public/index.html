@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://subtle-druid-430b16.netlify.app/codemate-badge.js" defer></script>
+</head>
+  <meta charset="utf-8" />
+  
+  <!-- Responsive viewport & mobile optimizations -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  
+  <meta name="theme-color" content="#ffffff" />
+  <meta
+    name="description"
+    content="Font Pairing Preview Tool - A modern tool to test and preview font combinations for your web projects with live typography adjustments."
+  />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  
+  <!-- Tailwind CSS: Includes Preflight (a modern CSS reset) by default -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
+  <!-- Google Fonts API: Preloaded fonts for preview & UI elements. Using variable fonts where available for better performance and flexibility. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Inter:wght@100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  
+  <title>Font Pairing Preview Tool</title>
+
+  <style>
+    /* Basic styles for smooth font loading and improved text rendering */
+    html {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      font-feature-settings: "liga" 1, "kern" 1; /* Enable common ligatures and kerning */
+    }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* Default UI font stack */
+      line-height: 1.5; /* Sensible default line height */
+    }
+  </style>
+</head>
+<body class="bg-slate-100 min-h-screen">
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
+    This HTML file is a template.
+    The application will be built dynamically using React components.
+    Google Fonts API integration allows loading additional fonts on demand.
+    Tailwind CSS provides utility classes for styling and includes Preflight for CSS reset.
+  -->
+</body>
+</html>

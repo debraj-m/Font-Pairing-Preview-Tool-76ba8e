@@ -1,0 +1,238 @@
+:root {
+  /* === Contemporary Color Palette === */
+
+  /* Primary Colors (Cool Indigo/Blue) */
+  --color-primary-50: #eef2ff;   /* Lightest */
+  --color-primary-100: #e0e7ff;
+  --color-primary-300: #a5b4fc;
+  --color-primary-500: #6366f1;  /* Main Primary */
+  --color-primary-600: #4f46e5;  /* Primary Darker */
+  --color-primary-700: #4338ca;
+  --color-primary-900: #312e81;  /* Darkest */
+
+  /* Neutral/Secondary Colors (Slate Grey) */
+  --color-neutral-50: #f8fafc;   /* Lightest Background */
+  --color-neutral-100: #f1f5f9;  /* Light Background / Borders */
+  --color-neutral-200: #e2e8f0;  /* Borders / Subtle UI */
+  --color-neutral-300: #cbd5e1;  /* Borders / Disabled */
+  --color-neutral-400: #94a3b8;  /* Secondary Text / Icons */
+  --color-neutral-500: #64748b;  /* Main Secondary / Subtle Text */
+  --color-neutral-700: #334155;  /* Primary Text Darker */
+  --color-neutral-900: #0f172a;  /* Darkest Text / Accents */
+
+  /* Accent Colors */
+  --color-accent-sky-500: #0ea5e9;  /* Sky Blue for highlights */
+  --color-accent-rose-500: #f43f5e; /* Rose for warnings/errors or vibrant CTAs */
+  --color-accent-emerald-500: #10b981; /* Emerald for success */
+
+  /* Semantic Colors */
+  --color-text-body: var(--color-neutral-700);
+  --color-text-heading: var(--color-neutral-900);
+  --color-text-subtle: var(--color-neutral-500);
+  --color-text-on-primary: #ffffff;
+  --color-text-link: var(--color-primary-600);
+  --color-text-link-hover: var(--color-primary-700);
+
+  --color-background-page: var(--color-neutral-100);
+  --color-background-card: #ffffff;
+  --color-background-tooltip: var(--color-neutral-900);
+  --color-text-tooltip: var(--color-neutral-100);
+
+  --color-border-default: var(--color-neutral-200);
+  --color-border-interactive: var(--color-neutral-300);
+  --color-border-focus: var(--color-primary-500);
+
+  --color-success: var(--color-accent-emerald-500);
+  --color-error: var(--color-accent-rose-500);
+
+  /* === Typography === */
+  --font-family-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-serif: "Merriweather", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-family-mono: "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --font-size-xs: 0.75rem;   /* 12px */
+  --font-size-sm: 0.875rem;  /* 14px */
+  --font-size-base: 1rem;    /* 16px */
+  --font-size-lg: 1.125rem;  /* 18px */
+  --font-size-xl: 1.25rem;   /* 20px */
+  --font-size-2xl: 1.5rem;   /* 24px */
+  --font-size-3xl: 1.875rem; /* 30px */
+  --font-size-4xl: 2.25rem;  /* 36px */
+
+  --line-height-normal: 1.5;
+  --line-height-snug: 1.375;
+  --line-height-tight: 1.25;
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* === Spacing (based on 0.25rem = 4px scale) === */
+  --space-px: 1px;
+  --space-0: 0;
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+  --space-20: 5rem;    /* 80px */
+  --space-24: 6rem;    /* 96px */
+
+  /* === Borders & Radii === */
+  --border-width-thin: 1px;
+  --border-width-medium: 2px;
+
+  --radius-sm: 0.25rem;    /* 4px */
+  --radius-md: 0.375rem;   /* 6px, common Tailwind default */
+  --radius-lg: 0.5rem;     /* 8px */
+  --radius-xl: 0.75rem;    /* 12px */
+  --radius-2xl: 1rem;      /* 16px */
+  --radius-full: 9999px;
+
+  /* === Transitions === */
+  --transition-duration-short: 150ms;
+  --transition-duration-medium: 300ms;
+  --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* Tailwind's default ease */
+
+  /* === Shadows (inspired by Tailwind's defaults) === */
+  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.03);
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.07), 0 1px 2px -1px rgb(0 0 0 / 0.07);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+
+  /* === Z-Index (example scale) === */
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1020;
+  --z-index-modal-backdrop: 1040;
+  --z-index-modal: 1050;
+  --z-index-popover: 1060;
+  --z-index-tooltip: 1070;
+  --z-index-notification: 1100;
+}
+
+/* === Global Styles === */
+/* These styles complement Tailwind's Preflight reset */
+
+html {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-body);
+  background-color: var(--color-background-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  box-sizing: border-box; /* Apply border-box to html for easier calculations */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; /* Inherit box-sizing from html */
+  border-width: 0; /* Tailwind's Preflight often sets border-style: solid, border-width:0. This reinforces it */
+  border-style: solid;
+  border-color: var(--color-border-default);
+}
+
+body {
+  margin: 0; /* Ensure no default margin from user agent stylesheet if Preflight is missed */
+  min-height: 100vh;
+  display: flex; /* For sticky footer patterns if needed */
+  flex-direction: column; /* For sticky footer patterns if needed */
+}
+
+/* Consistent Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text-heading);
+  font-weight: var(--font-weight-bold); /* Default bold for headings */
+  line-height: var(--line-height-tight);
+}
+
+/* Example: More specific heading sizes if not using Tailwind typography plugin */
+/*
+h1 { font-size: var(--font-size-4xl); }
+h2 { font-size: var(--font-size-3xl); }
+h3 { font-size: var(--font-size-2xl); }
+h4 { font-size: var(--font-size-xl); }
+h5 { font-size: var(--font-size-lg); }
+h6 { font-size: var(--font-size-base); font-weight: var(--font-weight-semibold); }
+*/
+
+p {
+  margin-bottom: var(--space-4); /* Default paragraph spacing */
+}
+
+a {
+  color: var(--color-text-link);
+  text-decoration: none;
+  transition: color var(--transition-duration-short) var(--transition-timing-function);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--color-text-link-hover);
+  text-decoration: underline;
+  outline: none; /* Rely on focus-visible if providing custom focus styles */
+}
+
+/* Focus visible state for accessibility - more robust than :focus */
+*:focus-visible {
+  outline: var(--border-width-medium) solid var(--color-primary-500);
+  outline-offset: var(--space-1);
+  border-radius: var(--radius-sm); /* Consistent focus ring radius */
+}
+
+/* Basic form styling (Tailwind form plugin is often preferred for comprehensive styling) */
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  /* Example general styling */
+  /* padding: var(--space-2) var(--space-3); */
+  /* border-radius: var(--radius-md); */
+  /* border: var(--border-width-thin) solid var(--color-border-interactive); */
+}
+
+/* Modern scrollbar styling (Webkit only) */
+::-webkit-scrollbar {
+  width: var(--space-2);
+  height: var(--space-2);
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-neutral-100);
+  border-radius: var(--radius-md);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-neutral-300);
+  border-radius: var(--radius-md);
+  border: var(--space-px) solid var(--color-neutral-100); /* Creates padding around thumb */
+  transition: background-color var(--transition-duration-short) var(--transition-timing-function);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-neutral-400);
+}
+
+/* Smooth transitions for theme changes (if applicable) */
+body, .transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: var(--transition-timing-function);
+  transition-duration: var(--transition-duration-medium);
+}
+
+/* Add other global styles or very specific utility classes here if absolutely necessary,
+   but prefer Tailwind utilities for component-level styling. */
